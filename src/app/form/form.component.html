@@ -1,1 +1,33 @@
-<p>form works!</p>
+<div class="row">
+    <div class="col">
+        <input type="text" class="form-control" placeholder="Enter Name" aria-label="Name" #username>
+    </div>
+    <div class="col">
+        <div ngbDropdown >
+            <button class="btn btn-outline-primary btn-block "  id="dropdownBasic1" ngbDropdownToggle>{{ selectedvalue }}</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button (click)="dropdownselect('North America')" ngbDropdownItem>North America</button>
+              <button (click)="dropdownselect('South America')" ngbDropdownItem>South America</button>
+              <button (click)="dropdownselect('Europe')" ngbDropdownItem>Europe</button>
+              <button (click)="dropdownselect('Central Asia')" ngbDropdownItem>Central Asia</button>
+              <button (click)="dropdownselect('East Asia')" ngbDropdownItem>East Asia</button>
+              <button (click)="dropdownselect('South Asia')" ngbDropdownItem>South Asia</button>
+              <button (click)="dropdownselect('Australia')" ngbDropdownItem>Australia</button>
+              <button (click)="dropdownselect('Antartica')" ngbDropdownItem>Antartica</button>
+              <button (click)="dropdownselect('Europe')" ngbDropdownItem>Europe</button>
+              <button (click)="dropdownselect('Mars')" ngbDropdownItem>Mars</button>
+              <button (click)="dropdownselect('Zeta Reticuli')" ngbDropdownItem>Zeta Reticuli</button>
+              <button (click)="dropdownselect('Andromeda')" ngbDropdownItem>Andromeda</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <input type="text" class="form-control" placeholder="Favourite food" aria-label="Favourite food" #food>
+    </div>
+    <div class="col-3">
+        <input type="text" class="form-control" placeholder="Link to food" aria-label="Link to food" #foodlink>
+    </div>
+    <div class="col">   
+        <button type="submit" class="btn btn-primary" (click)="munchit()">Munch it! </button>
+    </div>
+  </div>

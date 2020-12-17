@@ -3,24 +3,22 @@
     <div class="col text-center">
       <h1 > What you munching?</h1>
       <p class="lead">
-        Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
+        Hi Munchers! Enter your favourite food below :
       </p>
     </div>
     
   </div>
-  <div class="row">
-    <div class="col text-center">
-      <app-form></app-form>
-  </div>
-</div>
-  <div class="row">
-    <div class="col text-center">
-      <app-display></app-display>
-  </div>
+  
+  
+      <app-form (munchItEvent)="munchItDisplay($event)"></app-form>
+  
+
+ 
+      <app-display [munchItData] = "munchItData"></app-display>
+ 
 
   </div>
   
   <!-- <router-outlet></router-outlet> -->
-</div>
 
 
