@@ -7,11 +7,12 @@ import {Munchitformat} from './munchitformat';
 })
 export class AppComponent {
   title = 'what-you-munching';
- 
+ munchItData1 = [];
 
 
   munchItPush(data : Munchitformat){
-  console.log(data.userName);
+  this.munchItData1.push({userName : data.userName, 
+    location: data.location, favFood: data.favFood, foodLink: data.foodLink});
     
   }
 }

@@ -1,5 +1,21 @@
 <div class="row mt-3">
-    <div class="col">
-       <p> Content will be displayed here : </p>
-    </div>
-  </div>
+<table class="table table-hover">
+   <thead>
+     <tr>
+       <th scope="col">User Name</th>
+       <th scope="col">Location</th>
+       <th scope="col">Favourite Food</th>
+       <th scope="col">Link to Food</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr *ngFor = "let munchItDataitem of munchItData">
+       <td scope="row">{{munchItDataitem.userName}}</td>
+       <td>{{munchItDataitem.location}}</td>
+       <td>{{munchItDataitem.favFood}}</td>
+       <td><a href="{{munchItDataitem.foodLink}}" target = "_blank" class="nav-link">{{munchItDataitem.foodLink}}</a></td>
+     </tr>
+
+   </tbody>
+ </table>
+</div>
