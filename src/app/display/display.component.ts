@@ -7,6 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class DisplayComponent implements OnInit {
   @Input() munchItData: {userName : string, location: string, favFood: string, foodLink: string};
+  // munchItData2 = [{userName : 'Priyanka', location: 'Korea', favFood: 'Biryani', foodLink: 'http://www.google.com'}];
+ 
+ 
   constructor() { }
 
   ngOnInit(): void {
