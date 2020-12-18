@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild, EventEmitter, Output } from '@angular/core';
-
+import {Munchitformat} from '../munchitformat';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -7,7 +7,7 @@ import { Component, ElementRef, OnInit, ViewChild, EventEmitter, Output } from '
 })
 export class FormComponent implements OnInit {
   selectedvalue = "Enter Location";
-  @Output() munchItEvent = new EventEmitter<{userName : string, location: string, favFood: string, foodLink: string}>();
+  @Output() munchItEvent = new EventEmitter<Munchitformat>();
   constructor() { }
   @ViewChild('username',{static:true}) username: ElementRef;
   @ViewChild('food',{static:true}) food: ElementRef;
