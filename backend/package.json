@@ -1,0 +1,20 @@
+{
+  "name": "wym-backend-api",
+  "version": "1.0.0",
+  "description": "Node.Js server side code that will access postgresql db to store and retrieve data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.js"
+  },
+  "keywords": [
+    "api",
+    "database"
+  ],
+  "author": "Rahul Ramesh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.5.1"
+  }
+}
