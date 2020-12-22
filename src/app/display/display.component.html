@@ -9,11 +9,11 @@
      </tr>
    </thead>
    <tbody>
-     <tr *ngFor = "let munchItDataitem of munchItData">
-       <td scope="row">{{munchItDataitem.userName}}</td>
-       <td>{{munchItDataitem.location}}</td>
-       <td>{{munchItDataitem.favFood}}</td>
-       <td><a href="{{munchItDataitem.foodLink}}" target = "_blank" class="nav-link">{{munchItDataitem.foodLink}}</a></td>
+     <tr *ngFor = "let responseitem of response">
+       <td scope="row">{{responseitem.username}}</td>
+       <td>{{responseitem.location}}</td>
+       <td>{{responseitem.favouritefood}}</td>
+       <td><a href="{{responseitem.foodlink}}" target = "_blank" class="nav-link">{{responseitem.foodlink}}</a></td>
      </tr>
 
    </tbody>

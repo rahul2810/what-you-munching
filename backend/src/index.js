@@ -1,16 +1,17 @@
 const Pool = require('pg').Pool;
 const express = require('express');
-
+const db = require('./db');
+const cors = require('cors');
 const app = express();
 
 const port = 3000;
 
 const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'what-you-munching',
-    password: '12345678',
-    port: 5432,
+    user: db.user,
+    host: db.host,
+    database: db.database,
+    password: db.password,
+    port: db.port,
 });
 
 //get all munch it data
@@ -27,18 +28,18 @@ const getMunchit = (request, response) => {
 
 const postMunchit = (request, response) => {
     const { username, location, favouritefood, foodlink } = request.body;
-  
     pool.query('INSERT INTO munchit (username, location, favouritefood, foodlink) VALUES ($1, $2, $3, $4)',
      [username, location, favouritefood, foodlink ],
      (error, results) => {
       if (error) {
         throw error;
       }
-      response.status(201).send('Record Added : ' + username + ' ' + location + ' ' + favouritefood + ' ' + foodlink );
+     response.status(200).json(request.body);
     })
   };
-
+app.use(cors());
 app.use(express.json());
+
 
 app.get('/', (req, res) => res.json({ info: 'Node.js, Express, and Postgres API'}));
 

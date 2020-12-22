@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output  } from '@angular/core';
 import {Munchitformat} from './munchitformat';
 @Component({
   selector: 'app-root',
@@ -8,11 +8,11 @@ import {Munchitformat} from './munchitformat';
 export class AppComponent {
   title = 'what-you-munching';
  munchItData1 = [];
-
+ @Output() munchItDataAdded = new EventEmitter<any>();
 
   munchItPush(data : Munchitformat){
-  this.munchItData1.push({userName : data.userName, 
-    location: data.location, favFood: data.favFood, foodLink: data.foodLink});
-    
+  this.munchItData1.push({username : data.username, 
+    location: data.location, favouritefood: data.favouritefood, foodlink: data.foodlink});
+    this.munchItDataAdded.emit("Data Added"); 
   }
 }

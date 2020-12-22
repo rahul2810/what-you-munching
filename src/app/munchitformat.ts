@@ -1,1 +1,1 @@
-export interface Munchitformat {userName : string, location: string, favFood: string, foodLink: string}
+export interface Munchitformat {username : string, location: string, favouritefood: string, foodlink: string}
