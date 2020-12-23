@@ -9,7 +9,6 @@ import { MunchitAPIService} from '../munchit-api.service';
 })
 export class FormComponent implements OnInit {
   selectedvalue = "Enter Location";
-  //@Output() munchItEvent = new EventEmitter<Munchitformat>();
   constructor(private _munchitService: MunchitAPIService) { }
   @ViewChild('username',{static:true}) username: ElementRef;
   @ViewChild('food',{static:true}) food: ElementRef;
@@ -21,6 +20,5 @@ export class FormComponent implements OnInit {
   munchit(){
     let sendData = {username: this.username.nativeElement.value, location: this.selectedvalue, favouritefood: this.food.nativeElement.value, foodlink: this.foodlink.nativeElement.value};
    this._munchitService.postMunchIt(sendData);
-    //this.munchItEvent.emit(sendData);
   }
 }
