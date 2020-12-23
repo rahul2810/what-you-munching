@@ -7,7 +7,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./display.component.css']
 })
 export class DisplayComponent implements OnInit {
-  private response : any;
+  response : any;
   subscription: Subscription;
   constructor(private _munchitService: MunchitAPIService) { 
     this.subscription = this._munchitService.observeMunch().subscribe(response =>
