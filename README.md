@@ -1,27 +1,58 @@
-# WhatYouMunching
+# What you munching?
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
+'What you munching?' is a web application built using **Angular 10 (Front End)**, **Node.Js (Back End)** & **Postgresql (Database)**.  :sparkles:
 
-## Development server
+App collects favourite food along with a link to a description or recipe and stores it in a database. The data is then retrieved and displayed realtime.  
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Pre-requisites:
+1. **NPM installed** : [NPMjs site](https://www.npmjs.com/get-npm)
 
-## Code scaffolding
+2. **Angular CLI installed** : `npm install -g @angular/cli`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+3. **Postgresql** : [Postgresql site](https://www.postgresql.org/) (**Alternative:**  other sql databases)
 
-## Build
+### Database Configuration :
+> The below configuration is written based on **Postgresql**. For other sql databases tweek as necessary.
+1. Setup database on a postgresql server.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+2. Create a table **'munchit'** on the database using the below the script :
 
-## Running unit tests
+```sql
+CREATE TABLE public.munchit
+(
+    username text COLLATE pg_catalog."default",
+    location text COLLATE pg_catalog."default",
+    favouritefood text COLLATE pg_catalog."default",
+    foodlink text COLLATE pg_catalog."default",
+    id integer NOT NULL DEFAULT nextval('munchit_id_seq'::regclass),
+    CONSTRAINT munchit_pkey PRIMARY KEY (id)
+)
+```
+### DB.js Configuration :
+1. Open **db.sql** at (\what-you-munching\backend\src\db.js) in a code editor.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Modify default database configuration below :
+  ```javascript
+  var db = {
+    user: 'postgres', //as configured on database
+    host: 'localhost', //if running on local
+    database: 'what-you-munching', //database name configured on server
+    password: '12345678', //as configured on database
+    port: 5432,  //port database server is listening to as per server configuration
+};
+  ```
 
-## Running end-to-end tests
+## Running App (On Local)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Start Node.js Server
+1. Open **Command Prompt** & navigate to solution folder. (\what-you-munching\backend) 
 
-## Further help
+2. Run command : `npm start` (This will start node backend that listens to port 3000 )
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Launch Angular Application
+
+1. Open another **Command Prompt** & navigate to solution folder. (\what-you-munching) 
+
+2. Run command : `npm install` (This should install all the dependancies)
+
+3. Run command : `ng serve -o`  (This will launch a new tab on browser with the active application : http://localhost:4200/)
