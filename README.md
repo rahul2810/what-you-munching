@@ -2,7 +2,7 @@
 
 'What you munching?' is a web application built using **Angular 10 (Front End)**, **Node.Js (Back End)** & **Postgresql (Database)**.  :sparkles:
 
-App collects favourite food along with a link to a description or recipe and stores it in a database. The data is then retrieved and displayed realtime.  
+Application collects favourite food along with a link to a description or recipe and stores it in a database. The data is then retrieved and displayed realtime.  
 
 ![what you munchiong screenshot](https://github.com/rahul2810/what-you-munching/blob/master/munchit_screenshot.png?raw=true)
 
