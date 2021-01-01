@@ -25,7 +25,9 @@ postMunchIt(munchitdata : Munchitformat){
   //const httpOptions = {headers: new HttpHeaders({'responseType': 'text', 'Content-Type': 'text/plain'})};
   let url = "http://localhost:3000/munchit";
   this.http.post<any>(url,munchitdata)
-  .toPromise().then((data : any) => {console.log(data); this.subject.next();});
+  .toPromise().then((data : any) => {
+    // console.log(data); 
+    this.subject.next();});
 }
 observeMunch(): Observable<any> {
   return this.subject.asObservable();
